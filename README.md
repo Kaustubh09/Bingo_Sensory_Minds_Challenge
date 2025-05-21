@@ -1,1 +1,0 @@
-# Bingo_Sensory_Minds_Challenge
