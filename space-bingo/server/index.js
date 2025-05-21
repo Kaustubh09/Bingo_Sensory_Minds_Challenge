@@ -8,7 +8,7 @@ app.use(cors());
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "*",
+    origin: "https://space-bingo-frontend.onrender.com",
     methods: ["GET", "POST"]
   }
 });
