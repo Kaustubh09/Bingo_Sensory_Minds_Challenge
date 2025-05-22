@@ -10,6 +10,9 @@ const socket = io(
     : 'https://space-bingo-backend.onrender.com',
   {
     transports: ['websocket'],
+    withCredentials: true,
+    secure: true,
+    rejectUnauthorized: false,
     autoConnect: true
   }
 );

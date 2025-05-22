@@ -6,10 +6,11 @@ const cors = require('cors');
 const app = express();
 app.use(cors({
   origin: [
-    "https://space-bingo-frontend.onrender.com", // Your Render frontend URL
+    "https://space-bingo-frontend.onrender.com", // Rendered frontend URL
     "http://localhost:3000"
   ],
-  credentials: true
+  credentials: true,
+  allowedHeaders: ["Content-Type"]
 }));
 const httpServer = createServer(app);
 
