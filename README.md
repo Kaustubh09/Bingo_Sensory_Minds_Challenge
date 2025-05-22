@@ -39,7 +39,7 @@ In separate terminals:
 ```bash
 cd server
 node index.js
-# Server runs on http://localhost:5001
+# Server runs on http://localhost:10000
 ```
 
 # Terminal 2 (Frontend):
