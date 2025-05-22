@@ -1,14 +1,22 @@
+require('dotenv').config();
 const express = require('express');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://space-bingo-frontend.onrender.com", // Your Render frontend URL
+    "http://localhost:3000"
+  ],
+  credentials: true
+}));
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: "*",
+    origin: ["https://space-bingo-frontend.onrender.com","http://localhost:3000"] ,
+    credentials: true,
     methods: ["GET", "POST"]
   }
 });
