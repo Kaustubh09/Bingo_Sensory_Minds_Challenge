@@ -4,7 +4,15 @@ import BingoBoard from './BingoBoard';
 import Confetti from 'react-confetti';
 import './App.css';
 
-const socket = io('');
+const socket = io(
+  process.env.NODE_ENV === 'development' 
+    ? 'http://localhost:10000' 
+    : 'https://space-bingo-backend.onrender.com',
+  {
+    transports: ['websocket'],
+    autoConnect: true
+  }
+);
 
 function App() {
   const [cells, setCells] = useState(Array(25).fill(false));
