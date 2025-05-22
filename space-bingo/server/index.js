@@ -12,11 +12,18 @@ app.use(cors({
   credentials: true
 }));
 const httpServer = createServer(app);
+
 const io = new Server(httpServer, {
   cors: {
-    origin: ["https://space-bingo-frontend.onrender.com","http://localhost:3000"] ,
+    origin: [
+      "https://space-bingo-frontend.onrender.com",
+      "http://localhost:3000"
+    ],
     credentials: true,
     methods: ["GET", "POST"]
+  },
+  connectionStateRecovery: {
+    maxDisconnectionDuration: 2 * 60 * 1000 // 2 minutes
   }
 });
 
