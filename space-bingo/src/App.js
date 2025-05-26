@@ -7,7 +7,7 @@ import './App.css';
 const socket = io(
   process.env.NODE_ENV === 'development' 
     ? 'http://localhost:10000' 
-    : 'https://space-bingo-backend.onrender.com',
+    : 'https://space-bingo-backend-pa81.onrender.com',
   {
      transports: ['websocket'],
     reconnection: true,
